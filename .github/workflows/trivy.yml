@@ -9,9 +9,8 @@ on:
 
 jobs:
   trivy-scan:
+    name: Build
     runs-on: ubuntu-latest
-    permissions:
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
