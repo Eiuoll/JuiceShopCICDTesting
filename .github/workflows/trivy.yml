@@ -11,8 +11,6 @@ jobs:
   trivy-scan:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      security-events: write
 
     steps:
       - name: Checkout repo
@@ -21,11 +19,11 @@ jobs:
       - name: Trivy FS Scan
         uses: aquasecurity/trivy-action@0.28.0
         with:
-          scan-type: fs
+          scan-type: 'fs'
           ignore-unfixed: true,
-          format: sarif
-          output: trivy-FS-results.sarif
-          severity: CRITICAL, HIGH
+          format: 'sarif'
+          output: 'trivy-FS-results.sarif'
+          severity: 'CRITICAL,HIGH'
 
       - name: Upload to security tab
         uses: github/codeql-action/upload-sarif@v3
