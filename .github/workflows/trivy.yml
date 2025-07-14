@@ -3,9 +3,9 @@ name: Trivy Security Scan
 
 on:
   push:
-    branches: [main]
-  pull-request:
-    branches: [main]
+    branches: ['*']
+  pull_request:
+    branches: ['*']
 
 jobs:
   trivy-scan:
